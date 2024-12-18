@@ -229,6 +229,8 @@ ingress:
 
     # Annotations for the statsd Ingress
     annotations: {}
+    serviceAccount:
+      automountServiceAccountToken: false
 
     # The path for the statsd Ingress
     path: "/metrics"
@@ -256,6 +258,8 @@ ingress:
   pgbouncer:
     # Enable web ingress resource
     enabled: false
+    serviceAccount:
+      automountServiceAccountToken: false
 
     # Annotations for the pgbouncer Ingress
     annotations: {}
@@ -2181,7 +2185,7 @@ pgbouncer:
   serviceAccount:
     # default value is true
     # ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
-    automountServiceAccountToken: true
+    automountServiceAccountToken: false
     # Specifies whether a ServiceAccount should be created
     create: true
     # The name of the ServiceAccount to use.
